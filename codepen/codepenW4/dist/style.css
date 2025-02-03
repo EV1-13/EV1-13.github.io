@@ -69,14 +69,14 @@ img {
    url(https://assets.codepen.io/605876/code-icon-bg.svg) 0 0 / 18% 18%,
    linear-gradient(115deg,
      transparent 20%,
-     var(--green-8) 30%,
+     var(--blue-8) 30%,
      transparent 48% 52%,
-     var(--indigo-8) 70%,
+     var(--purple-8) 70%,
      transparent
    )
    80% 80% / 300% 300%;
   filter: brightness(2) contrast(1);
-  background-blend-mode: overlay;
+  background-blend-mode: multiply;
   mix-blend-mode: color-dodge;
   position: absolute;
   inset: 0;
