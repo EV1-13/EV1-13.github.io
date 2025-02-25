@@ -1,0 +1,50 @@
+body{
+    background-color: khaki;
+}
+#box1{
+    width: 25vw;
+    height: 20vh;
+    background-color: indianred;
+    transition: background-color 2s;
+}
+
+#box1:hover {
+    background-color: purple;
+}
+
+
+#box2{
+    width: 25vw;
+    height:20vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: orangered;
+
+    animation-duration: 3s;
+    animation-name: box2move;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+#box2 img { 
+    max-height: 100%;
+    float: right;
+}
+
+@keyframes box2move {
+    from {
+        transform: rotate(0deg)
+      }
+    
+      to {
+        transform: rotate(360deg)
+
+      }
+
+}
+
+#box2:hover {
+    animation-duration: 0.00001s;
+}
