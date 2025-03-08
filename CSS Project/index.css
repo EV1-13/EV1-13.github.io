@@ -1,0 +1,298 @@
+/* add breakpoint at 900 px and 400 and maybe more */
+/* add images */
+/* add animations (like when pages load in or when you scroll maybe the asides/articles fade in) */
+
+@media screen and (min-width: 580px) {
+body {
+    background: url("./img/galaxy-bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: white;
+    position: relative;
+    height: 100%;
+}
+
+header {
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+article {
+    margin-right: 15%;
+    margin-left: 15%;
+    padding: 3%;
+    text-align: justify;
+    background-color: black;
+    border-radius: 10px;
+}
+
+p {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-family: "Big Shoulders Stencil", sans-serif;
+}
+
+h1 {
+    font-size: 4em;
+    background: radial-gradient(circle, 
+    #e5ba6b, #e56b9e, #9f78c9, #8383d5);
+                    background-clip: text;
+                    color: transparent;
+}
+
+h2 {
+    font-size: 2em;
+    color: #9f78c9;
+}
+
+h4 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    color: #8383d5;
+}
+
+hr {
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: white 5px double;
+}
+
+.icon {
+    font-size: 2em;
+    text-align: center;
+    color: #e5ba6b;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+nav a {
+    text-align: center;
+    font-size: 1em;
+    height: 2em;
+    width: 17em;
+    padding: 10px;
+    background-color: black;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+    overflow-wrap: break-word;
+
+    transition: background-color 0.5s;
+}
+
+nav a:hover {
+    background-color: rgb(66, 66, 66);
+    color: #e5ba6b;
+}
+  
+  .scroll-top {
+    position: absolute;
+    top: 120vh;
+    bottom: 6rem;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .scroll-top__link {
+    position: sticky;
+    top: 90vh;
+    font-size: 2em;
+    background-color: black;
+    color: white;
+    border: solid black 5px;
+    border-radius: 10px;
+    padding: 5px;
+    text-decoration: none;
+
+    transition: background-color 0.5s;
+    transition: border 0.5s;
+    transition: color 0.5s;
+  }
+
+  .scroll-top__link:hover {
+    background-color: rgb(66, 66, 66);
+    border: solid rgb(66, 66, 66) 5px;
+    color: #e5ba6b;
+  }
+
+aside {
+    position: relative;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 15%;
+    margin-left: 15%;
+    padding: 15px;
+    background-color: black;
+    border-radius: 10px;
+}
+}
+
+@media screen and (max-width: 580px) {
+    body {
+        background: url("./img/galaxy-bg.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+    
+        color: white;
+        position: relative;
+        height: 100%;
+    }
+    
+    header {
+        background-color: black;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    article {
+        padding: 3%;
+        text-align: justify;
+        background-color: black;
+        border-radius: 10px;
+    }
+    
+    p {
+        font-family: "Kanit", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+    
+    h1, h2, h3 {
+        text-align: center;
+        font-family: "Big Shoulders Stencil", sans-serif;
+    }
+    
+    h1 {
+        font-size: 4em;
+        background: radial-gradient(circle, 
+        #e5ba6b, #e56b9e, #9f78c9, #8383d5);
+                        background-clip: text;
+                        color: transparent;
+    }
+    
+    h2 {
+        font-size: 2em;
+        color: #9f78c9;
+    }
+    
+    h4 {
+        font-family: "Kanit", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        text-align: center;
+        color: #8383d5;
+    }
+    
+    hr {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background-color: black;
+        border: white 5px double;
+    }
+    
+    .icon {
+        font-size: 2em;
+        text-align: center;
+        color: #e5ba6b;
+    }
+    
+    nav {
+        position: sticky;
+        top: 0;
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: space-evenly;
+        margin-bottom: 1em;
+        margin-top: 1em;
+        border-radius: 10px;
+        z-index: 100;
+    }
+    
+    nav a {
+        text-align: center;
+        font-size: 1em;
+        height: 2em;
+        padding: 10px;
+        background-color: black;
+        font-family: "Kanit", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        text-decoration: none;
+        color: white;
+    
+        transition: background-color 0.5s;
+    }
+    
+    nav a:hover {
+        background-color: rgb(66, 66, 66);
+        color: #e5ba6b;
+    }
+      
+      .scroll-top {
+        position: absolute;
+        top: 120vh;
+        bottom: 6rem;
+        right: 10px;
+        z-index: 1000;
+      }
+      
+      .scroll-top__link {
+        position: sticky;
+        top: 90vh;
+        font-size: 1em;
+        background-color: black;
+        color: white;
+        border: solid black 5px;
+        border-radius: 10px;
+        padding: 5px;
+        text-decoration: none;
+    
+        transition: background-color 0.5s;
+        transition: border 0.5s;
+        transition: color 0.5s;
+      }
+    
+      .scroll-top__link:hover {
+        background-color: rgb(66, 66, 66);
+        border: solid rgb(66, 66, 66) 5px;
+        color: #e5ba6b;
+      }
+    
+    aside {
+        position: relative;
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 15px;
+        background-color: black;
+        border-radius: 10px;
+    }
+    }
