@@ -1,6 +1,13 @@
-/* add breakpoint at 900 px and 400 and maybe more */
+/* fix spacing */
 /* add images */
-/* add animations (like when pages load in or when you scroll maybe the asides/articles fade in) */
+/* add animations/transitions (like when pages load in or when you scroll maybe the asides/articles fade in) */
+/* add aside either elswhere or just add to article bit */
+/* footer */
+/* gradient on text move? */
+/* probably mess with colors more */
+/* maybe add a star instead of a line to seperate concerts */
+/* assign symbols to concerts and therefore nav? */
+/* fix asid margins */
 
 @media screen and (min-width: 580px) {
 body {
@@ -143,7 +150,7 @@ nav a:hover {
 aside {
     position: relative;
     text-align: center;
-    margin-top: 1em;
+    margin-top: -1em;
     margin-bottom: 1em;
     margin-right: 15%;
     margin-left: 15%;
