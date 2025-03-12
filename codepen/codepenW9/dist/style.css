@@ -373,7 +373,7 @@ h1 {
     color: white;
     
     background: radial-gradient(circle, 
-    #e5ba6b, #e56b9e, #9f78c9, #8383d5);
+    lightblue, pink, white, lightblue);
     -webkit-background-clip: text;
             background-clip: text;
     color: transparent;
