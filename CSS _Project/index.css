@@ -1,5 +1,9 @@
 @media screen and (min-width: 580px) {
 body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
     background: url("./img/galaxy-bg.jpg");
     background-attachment: fixed;
     background-size: cover;
@@ -16,12 +20,10 @@ body {
 
 @keyframes pagemove {
     from {
-        translate: 0 -5vw;
         opacity: 0;
       }
     
     to {
-        translate: 0 0vw;
         opacity: 100%;
       }
 }
@@ -29,14 +31,15 @@ body {
 
 header {
     background-color: black;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 article {
     margin-right: 15%;
     margin-left: 15%;
-    padding: 3%;
+    padding: 4%;
     text-align: justify;
     background-color: black;
     border-radius: 10px;
@@ -46,9 +49,9 @@ footer {
     background-color: black;
     text-align: center;
     height: 4em;
-    padding: 3%;
-    padding-top: 50px;
-    margin-top: 40px;
+    padding: 4%;
+    margin-top: 5%;
+    padding-top: 4em;
 }
 
 p {
@@ -64,7 +67,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: 4em;
-    background-image: linear-gradient(92deg, #e5ba6b, #e56b9e, #9f78c9, #8383d5);
+    background-image: linear-gradient(92deg, #e5ba6b, #e56b9e, #9f78c9);
     background-size: 150%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -80,7 +83,13 @@ h1 {
 
 h2 {
     font-size: 2em;
-    color: #9f78c9;
+    background-image: linear-gradient(92deg, #e5ba6b, #e56b9e, #9f78c9);
+    background-size: 150%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: headergradient 1s ease-in-out infinite;
+    animation-direction: alternate;
 }
 
 h4 {
@@ -88,7 +97,9 @@ h4 {
     font-weight: 500;
     font-style: normal;
     text-align: center;
-    color: #8383d5;
+    background-image: linear-gradient(to top, #e56b9e, #9f78c9);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 hr {
@@ -118,10 +129,12 @@ nav {
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
     margin-top: 1em;
     border-radius: 10px;
     z-index: 100;
+
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 nav a {
@@ -144,7 +157,7 @@ nav a {
 
 nav a:hover {
     background-color: rgb(66, 66, 66);
-    color: #e5ba6b;
+    color: #e56b9e;
 }
   
   .scroll-top {
@@ -174,7 +187,7 @@ nav a:hover {
   .scroll-top__link:hover {
     background-color: rgb(66, 66, 66);
     border: solid rgb(66, 66, 66) 5px;
-    color: #e5ba6b;
+    color: #e56b9e;
   }
 
 aside {
@@ -184,7 +197,8 @@ aside {
     margin-bottom: 1em;
     margin-right: 15%;
     margin-left: 15%;
-    padding: 3%;
+    padding: 4%;
+    padding-top: 0;
     background-color: black;
     border-radius: 10px;
 }
@@ -192,6 +206,10 @@ aside {
 
 @media screen and (max-width: 580px) {
     body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+
         background: url("./img/galaxy-bg.jpg");
         background-attachment: fixed;
         background-size: cover;
@@ -200,12 +218,27 @@ aside {
         color: white;
         position: relative;
         height: 100%;
+
+        animation-duration: 1s;
+        animation-name: pagemove;
+        animation-timing-function: ease-in;
     }
+
+    @keyframes pagemove {
+        from {
+            opacity: 0;
+        }
+        
+        to {
+            opacity: 100%;
+        }
+}
     
     header {
         background-color: black;
         padding: 10px;
         border-radius: 10px;
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
     }
     
     article {
@@ -213,15 +246,17 @@ aside {
         text-align: justify;
         background-color: black;
         border-radius: 10px;
+        margin-right: 5%;
+        margin-left: 5%;
     }
 
     footer {
         background-color: black;
         text-align: center;
         height: 4em;
-        padding: 3%;
-        padding-top: 50px;
-        margin-top: 40px;
+        padding: 4%;
+        margin-top: 5%;
+        padding-top: 4em;
     }
     
     p {
@@ -237,15 +272,24 @@ aside {
     
     h1 {
         font-size: 4em;
-        background: radial-gradient(circle, 
-        #e5ba6b, #e56b9e, #9f78c9, #8383d5);
-                        background-clip: text;
-                        color: transparent;
+        background-image: linear-gradient(92deg, #e5ba6b, #e56b9e, #9f78c9);
+        background-size: 150%;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    
+        animation: headergradient 1s ease-in-out infinite;
+        animation-direction: alternate;
     }
     
     h2 {
         font-size: 2em;
-        color: #9f78c9;
+        background-image: linear-gradient(92deg, #e5ba6b, #e56b9e, #9f78c9);
+        background-size: 150%;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    
+        animation: headergradient 1s ease-in-out infinite;
+        animation-direction: alternate;
     }
     
     h4 {
@@ -253,7 +297,9 @@ aside {
         font-weight: 500;
         font-style: normal;
         text-align: center;
-        color: #8383d5;
+        background-image: linear-gradient(to top, #e56b9e, #9f78c9);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     
     hr {
@@ -282,10 +328,12 @@ aside {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         justify-content: space-evenly;
-        margin-bottom: 1em;
+        margin-bottom: 3em;
         margin-top: 1em;
         border-radius: 10px;
         z-index: 100;
+
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
     }
     
     nav a {
@@ -342,9 +390,12 @@ aside {
     aside {
         position: relative;
         text-align: center;
-        margin-top: 1em;
+        margin-top: -3em;
         margin-bottom: 1em;
-        padding: 3%;
+        margin-right: 5%;
+        margin-left: 5%;
+        padding: 4%;
+        padding-top: 0;
         background-color: black;
         border-radius: 10px;
     }
