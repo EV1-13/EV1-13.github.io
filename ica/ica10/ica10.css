@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+
+button {
+    background-color: blueviolet;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: spin 1s;
+}
+
+@keyframes move {
+    0% {
+      transform: translate(100%, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  .animate {
+    animation: move 2s forwards;
+  }
