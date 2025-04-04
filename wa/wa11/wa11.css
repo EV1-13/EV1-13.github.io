@@ -1,0 +1,51 @@
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: black;
+}
+
+body {
+  width: 640px;
+  margin: 0 auto;
+  background-color: rgb(243, 187, 196);
+}
+
+.full-img {
+  position: relative;
+  display: flex;
+  width: 640px;
+  height: 480px;
+  border: transparent;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 480px;
+  background-color: rgba(0,0,0,0);
+}
+
+button {
+  border: 0;
+  background: rgba(150,150,150,0.6);
+  text-shadow: 1px 1px 1px white;
+  border: 1px solid #999;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 2px;
+}
+
+.thumb-bar img {
+  display: flex;
+  width: 20%;
+  float: left;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
