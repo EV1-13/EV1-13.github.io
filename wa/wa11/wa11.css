@@ -38,8 +38,12 @@ button {
   left: 2px;
 }
 
-.thumb-bar img {
+.thumb-bar {
   display: flex;
+}
+
+.thumb-bar img {
+  display: block;
   width: 20%;
   float: left;
   cursor: pointer;
@@ -47,5 +51,5 @@ button {
 
 img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
