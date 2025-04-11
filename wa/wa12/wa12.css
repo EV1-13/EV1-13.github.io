@@ -67,4 +67,9 @@ body {
   .new-joke, .answer {
     background-color: yellow;
   }
+
+  .new-joke:hover, .answer:hover {
+    color: blue;
+   
+  }
   
