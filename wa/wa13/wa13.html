@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources</title>
+</head>
+<body>
+    
+
+<script>
+
+    //Problem 1
+    //Array of employees
+    const employeeData = {
+        firstName: ["Sam", "Mary", "Bill"],
+        department: ["Tech", "Finance", "HR"],
+        designation: ["Manager", "Trainee", "Executive"],
+        salary: [40000, 18500, 21200],
+        raise: [true, true, false]
+    }
+
+    console.log("Problem 1", employeeData);
+
+    //Problem 2
+    //Array for the company
+    const companyDetails = {
+        companyName: "Tech Stars",
+        website: "www.techstars.site",
+        employees: employeeData.firstName
+
+    }
+
+    console.log("Problem 2", companyDetails);
+
+    //Problem 3
+    //New employee added
+    const newEmployee = {
+        firstName: employeeData.firstName.push("Anna"),
+        department: employeeData.department.push("Tech"),
+        designation: employeeData.designation.push("Executive"),
+        salary: employeeData.salary.push(25600),
+        raise: employeeData.raise.push(false)
+    }
+
+    console.log("Problem 3", employeeData);
+
+    //Problem 4
+    //Total salary
+
+    let totalSalary = 0;
+
+    for (let i = 0; i < employeeData.salary.length; i++) {
+        totalSalary = totalSalary + employeeData.salary[i];
+    }
+
+    console.log("Problem 4", totalSalary);
+
+    //Problem 5
+    //Give eligible employees a raise
+
+    for (let i = 0; i < employeeData.salary.length; i++) {
+
+        if (employeeData.raise[i] == true) {
+
+        employeeData.salary[i] = (employeeData.salary[i] * 0.10) + employeeData.salary[i];
+
+        employeeData.raise[i] = false;
+        }
+    } 
+
+    console.log("Problem 5", employeeData.salary)
+
+    //Problem 6
+    //Working from home?
+    employeeData["WFH"] = [true, false, false, true];
+
+    console.log("Problem 6", employeeData);
+
+</script>
+
+
+</body>
+</html>
