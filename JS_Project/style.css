@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'MarioFont';
+    src: url('assets/SuperMario256.ttf');
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #87CEEB;    
+    font-family: 'MarioFont';
+}
+
+p {
+    visibility: hidden;
+    position: inherit;
+    font-size: 3vw;
+    top: -2em;
+    left: 1vw;
+    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+
+}
+
+#grass {
+    position: absolute;
+    width: 100vw;
+    height: 8vh;
+    bottom: -1vw;
+    background-image: url('assets/grass.png');
+    background-repeat: repeat;
+    background-size: 10% 100%;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('assets/sky.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#phoneNumber {
+    position: relative;
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 20vh;
+    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+}
+
+#lilguy {
+    position: absolute;
+    bottom: 4vh;
+    left: 4vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/mario.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#reset {
+    position: absolute;
+    bottom: 40vh;
+    left: 93vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/mushroom.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#num0 {
+    position: absolute;
+    bottom: 40vh;
+    left: 3vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num1 {
+    position: absolute;
+    bottom: 40vh;
+    left: 12vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num2 {
+    position: absolute;
+    bottom: 40vh;
+    left: 21vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num3 {
+    position: absolute;
+    bottom: 40vh;
+    left: 30vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num4 {
+    position: absolute;
+    bottom: 40vh;
+    left: 39vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num5 {
+    position: absolute;
+    bottom: 40vh;
+    left: 48vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num6 {
+    position: absolute;
+    bottom: 40vh;
+    left: 57vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num7 {
+    position: absolute;
+    bottom: 40vh;
+    left: 66vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num8 {
+    position: absolute;
+    bottom: 40vh;
+    left: 75vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
+
+#num9 {
+    position: absolute;
+    bottom: 40vh;
+    left: 84vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/lucky_block.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: black solid 0.2vw;
+}
