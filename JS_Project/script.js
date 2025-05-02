@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const guy = document.getElementById('lilguy');
     const gameContainer = document.getElementById('gameContainer');
     const resetNum = document.getElementById('reset');
+    const enterNum = document.getElementById('enter');
 
     document.getElementById('phoneNumber').textContent = "Phone Number: ";
 
-    //the divs for the nums
     const phoneNums = [
         document.getElementById('num0'),
         document.getElementById('num1'),
@@ -17,12 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('num7'),
         document.getElementById('num8'),
         document.getElementById('num9'),
-    ]
+    ];
+
+    const platforms = [
+        document.getElementById('plat0'),
+        document.getElementById('plat1'),
+        document.getElementById('plat2'),
+        document.getElementById('plat3'),
+        document.getElementById('plat4'),
+        document.getElementById('plat5'),
+        document.getElementById('plat6'),
+        document.getElementById('plat7'),
+        document.getElementById('plat8'),
+        document.getElementById('plat9'),
+        document.getElementById('platReset'),
+    ];
 
     function randomizeNumbers() {
-        //random numbersss
         const numbers = [...Array(10).keys()].sort(() => Math.random() - 0.5);
-        
         phoneNums.forEach((num, index) => {
             if (num) {
                 num.querySelector('p').textContent = numbers[index];
@@ -35,79 +47,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const numberDisplays = phoneNums.map(num => num.querySelector('p'));
 
-    //animation stuff
-    let isMoving = false;
     let lastDirection = 'right'; 
     let isGifPlaying = false;
+    let isMoving = false;
+    let guyPosition = 4;
+    let guyBottom = 4;
+    const gravity = 0.25;
+    const jumpSpeed = 4;
+    let phoneNumber = "";
 
-    let guyPosition = 4; // horizontal pos
-    let guyBottom = 4; // vertical pos
-    let isJumping = false; // so no flying
-    const jumpHeight = 35; // how high u jump
-    const gravity = 2; // makes you fall
-    const jumpSpeed = 4; // how fast u jump up
+    let velocityY = 0;
+    let isOnPlatform = false;
+    let currentJumpCollected = new Set();
 
-    let phoneNumber = ""; // phone number string !!
-
-    // initial pos
     guy.style.left = `${guyPosition}vw`;
     guy.style.bottom = `${guyBottom}vh`;
     stopGif();
 
+    function updatePhysics() {
+        checkCollision();
+        
+        if (!isOnPlatform) {
+            velocityY -= gravity;
+            guyBottom += velocityY;
+            
+            if (guyBottom <= 4) {
+                guyBottom = 4;
+                velocityY = 0;
+                isOnPlatform = true;
+                currentJumpCollected.clear();
+            }
+            
+            guy.style.bottom = `${guyBottom}vh`;
+        }
+        
+        requestAnimationFrame(updatePhysics);
+    }
 
-    // handles all key presses that do things
+    updatePhysics();
+
     document.addEventListener('keydown', (event) => {
-
-        const key = event.key;
-
-        // getting the widths of guy and container for game bounds
         const containerRect = gameContainer.getBoundingClientRect();
         const guyRect = guy.getBoundingClientRect();
         const containerWidth = containerRect.width;
         const guyWidth = guyRect.width;
 
-        if (key === 'ArrowRight') {
-
+        if (event.key === 'ArrowRight') {
             isMoving = true;
             lastDirection = 'right';
-
-            guyPosition += 2;
-
-            // so you can't go offscreen
-            if (guyPosition > containerWidth - guyWidth) {
-                guyPosition = containerWidth - guyWidth;
-            }
-
+            guyPosition = Math.min(guyPosition + 2, containerWidth - guyWidth);
             guy.style.left = `${guyPosition}vw`;
-
             updateDirection();
             playGif();
-
-        } else if (key === 'ArrowLeft') {
-
+        } else if (event.key === 'ArrowLeft') {
             isMoving = true;
             lastDirection = 'left';
-
-            guyPosition -= 2;
-            
-            //so you can't go off screen
-            if (guyPosition < 0) {
-                guyPosition = 0;
-            }
-
+            guyPosition = Math.max(guyPosition - 2, 0);
             guy.style.left = `${guyPosition}vw`;
-
             updateDirection();
             playGif();
-
-        } else if (key === ' ') {
-            if (!isJumping) {
-                jump();
-            }
+        } else if (event.key === ' ' && (isOnPlatform || guyBottom <= 4)) {
+            currentJumpCollected.clear(); 
+            jump();
         }
     });
 
-    //stops gif if player isnt moving
     document.addEventListener('keyup', (event) => {
         if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
             isMoving = false;
@@ -117,10 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateDirection() {
-        // flip based on last direction
-        guy.style.transform = lastDirection === 'left' 
-            ? 'scaleX(-1)' 
-            : 'scaleX(1)';
+        guy.style.transform = lastDirection === 'left' ? 'scaleX(-1)' : 'scaleX(1)';
     }
 
     function playGif() {
@@ -137,93 +138,82 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // the actual jump action
     function jump() {
-
-        isJumping = true;
-
-        let hasGotThisJump = new Set(); //prevents same num in same jump
-
-        let jumpUp = setInterval(() => {
-
-            if (guyBottom >= jumpHeight) {
-
-                clearInterval(jumpUp);
-
-                // fall
-                let fall = setInterval(() => {
-                    if (guyBottom <= 4) {
-
-                        clearInterval(fall);
-                        guyBottom = 4;
-                        guy.style.bottom = `${guyBottom}vh`;
-                        isJumping = false;
-
-                    } else {
-
-                        guyBottom -= gravity;
-                        guy.style.bottom = `${guyBottom}vh`;
-                        checkCollision(hasGotThisJump);
-
-                    }
-                }, 4);
-            } else {
-
-                guyBottom += jumpSpeed;
-                guy.style.bottom = `${guyBottom}vh`;
-                checkCollision(hasGotThisJump);
-
-            }
-        }, 4);
+        if (isOnPlatform || guyBottom <= 4) {
+            isOnPlatform = false;
+            velocityY = jumpSpeed;
+        }
     }
 
-    function checkCollision(hasGotThisJump) {
-
-        const guyRect = guy.getBoundingClientRect(); //re-get rect
+    function checkCollision() {
+        const guyRect = guy.getBoundingClientRect();
         
+        isOnPlatform = false;
+
+        platforms.forEach(platform => {
+            if (!platform) return;
+            const platRect = platform.getBoundingClientRect();
+            
+            if (
+                guyRect.bottom >= platRect.top &&
+                guyRect.bottom <= platRect.top + 20 &&
+                guyRect.right > platRect.left &&
+                guyRect.left < platRect.right &&
+                velocityY <= 0
+            ) {
+                isOnPlatform = true;
+                const platformTopVH = (platRect.top / window.innerHeight) * 100;
+                guyRect.bottom = platformTopVH + 0.5;
+                guy.style.bottom = `${guyBottom}vh`;
+                velocityY = 0;
+            }
+        });
+
         phoneNums.forEach((phoneNum, index) => {
+            if (!phoneNum || currentJumpCollected.has(index) || phoneNumber.length >= 10) return;
+            const numRect = phoneNum.getBoundingClientRect();
 
-            if (!phoneNum) return;
-            const numRect = phoneNum.getBoundingClientRect(); //get rect
-
-            //checks collision
             if (
                 guyRect.left < numRect.right &&
                 guyRect.right > numRect.left &&
                 guyRect.top < numRect.bottom &&
-                guyRect.bottom > numRect.top
+                guyRect.bottom > numRect.top &&
+                !currentJumpCollected.has(index)
             ) {
-
                 const collectedNum = phoneNum.dataset.value;
-
-                // puts the number into the string
-                if (!hasGotThisJump.has(index) && phoneNumber.length <= 10) {
-
-                    phoneNumber += collectedNum;
-                    hasGotThisJump.add(index);
-                    document.getElementById('phoneNumber').textContent = "Phone Number: " + phoneNumber;
-
-                    numberDisplays[index].style.visibility = 'visible';
-
-                }
+                phoneNumber += collectedNum;
+                currentJumpCollected.add(index);
+                document.getElementById('phoneNumber').textContent = "Phone Number: " + phoneNumber;
             }
         });
 
-        //resets the phone number
         const resetRect = resetNum.getBoundingClientRect();
-
         if (
             guyRect.left < resetRect.right &&
             guyRect.right > resetRect.left &&
             guyRect.top < resetRect.bottom &&
             guyRect.bottom > resetRect.top
-        ) {
+           ) {
             document.getElementById('phoneNumber').textContent = "Phone Number: ";
-            phoneNumber = " ";
-
-            numberDisplays.forEach(p => p.style.visibility = 'hidden');
+            phoneNumber = "";
             randomizeNumbers();
+        }
+
+    const enterRect = enterNum.getBoundingClientRect();
+        if (
+            guyRect.left < enterRect.right &&
+            guyRect.right > enterRect.left &&
+            guyRect.top < enterRect.bottom &&
+            guyRect.bottom > enterRect.top &&
+            phoneNumber.length == 10
+           ) {
+            document.getElementById('phoneNumber').textContent = "Your Phone Number Is: " + formatPhoneNumber(phoneNumber);
         }
     }
 
+    function formatPhoneNumber(rawNumber) {
+        const cleaned = rawNumber.replace(/\D/g, '');
+        const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+        return match ? `(${match[1]}) ${match[2]}-${match[3]}` : rawNumber;
+    }
 });

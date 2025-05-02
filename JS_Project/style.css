@@ -11,7 +11,6 @@ body {
 }
 
 p {
-    visibility: hidden;
     position: inherit;
     font-size: 3vw;
     top: -2em;
@@ -44,7 +43,7 @@ p {
     position: relative;
     text-align: center;
     font-size: 4vw;
-    margin-top: 20vh;
+    margin-top: 5vh;
     text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
 }
 
@@ -52,8 +51,8 @@ p {
     position: absolute;
     bottom: 4vh;
     left: 4vw;
-    width: 4vw;
-    height: 4vw;
+    width: 5vw;
+    height: 5vw;
     background-image: url('assets/mario.gif');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -61,8 +60,19 @@ p {
 
 #reset {
     position: absolute;
-    bottom: 40vh;
+    bottom: 60vh;
     left: 93vw;
+    width: 4vw;
+    height: 4vw;
+    background-image: url('assets/reset_mushroom.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#enter {
+    position: absolute;
+    bottom: 30vh;
+    left: 50vw;
     width: 4vw;
     height: 4vw;
     background-image: url('assets/mushroom.png');
@@ -70,12 +80,123 @@ p {
     background-size: 100% 100%;
 }
 
-#num0 {
+
+#plat0 {
+    position: absolute;
+    bottom: 30vh;
+    left: 2vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat1 {
+    position: absolute;
+    bottom: 10vh;
+    left: 13vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat2 {
     position: absolute;
     bottom: 40vh;
-    left: 3vw;
-    width: 4vw;
-    height: 4vw;
+    left: 20vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat3 {
+    position: absolute;
+    bottom: 50vh;
+    left: 29vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat4 {
+    position: absolute;
+    bottom: 40vh;
+    left: 38vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat5 {
+    position: absolute;
+    bottom: 50vh;
+    left: 47vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat6 {
+    position: absolute;
+    bottom: 55vh;
+    left: 56vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat7 {
+    position: absolute;
+    bottom: 34vh;
+    left: 65vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat8 {
+    position: absolute;
+    bottom: 47vh;
+    left: 74vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#plat9 {
+    position: absolute;
+    bottom: 15vh;
+    left: 83vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#platReset {
+    position: absolute;
+    bottom: 40vh;
+    left: 92vw;
+    width: 6vw;
+    height: 1vw;
+    background-color:brown;
+    border: black solid 0.2vw;
+}
+
+#num0 {
+    position: absolute;
+    bottom: 50vh;
+    left: 3.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -84,10 +205,10 @@ p {
 
 #num1 {
     position: absolute;
-    bottom: 40vh;
-    left: 12vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 30vh;
+    left: 14.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -96,10 +217,10 @@ p {
 
 #num2 {
     position: absolute;
-    bottom: 40vh;
-    left: 21vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 60vh;
+    left: 21.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -108,10 +229,10 @@ p {
 
 #num3 {
     position: absolute;
-    bottom: 40vh;
-    left: 30vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 70vh;
+    left: 30.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -120,10 +241,10 @@ p {
 
 #num4 {
     position: absolute;
-    bottom: 40vh;
-    left: 39vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 60vh;
+    left: 39.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -132,10 +253,10 @@ p {
 
 #num5 {
     position: absolute;
-    bottom: 40vh;
-    left: 48vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 70vh;
+    left: 48.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -144,10 +265,10 @@ p {
 
 #num6 {
     position: absolute;
-    bottom: 40vh;
-    left: 57vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 75vh;
+    left: 57.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -156,10 +277,10 @@ p {
 
 #num7 {
     position: absolute;
-    bottom: 40vh;
-    left: 66vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 54vh;
+    left: 66.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -168,10 +289,10 @@ p {
 
 #num8 {
     position: absolute;
-    bottom: 40vh;
-    left: 75vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 67vh;
+    left: 75.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -180,10 +301,10 @@ p {
 
 #num9 {
     position: absolute;
-    bottom: 40vh;
-    left: 84vw;
-    width: 4vw;
-    height: 4vw;
+    bottom: 35vh;
+    left: 84.5vw;
+    width: 3vw;
+    height: 3vw;
     background-image: url('assets/lucky_block.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
